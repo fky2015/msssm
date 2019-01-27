@@ -19,8 +19,9 @@ for fi = 1:data.floor_count
             data.floor(fi).agents(ai).f  / data.floor(fi).agents(ai).m;
         
         % clamp velocity
-        if norm(v) > data.v_max
-            v = v / norm(v) * data.v_max;
+        temp_v_max = data.floor(fi).agents(ai).v_max;
+        if norm(v) > temp_v_max
+            v = v / norm(v) * temp_v_max;
             n_velocity_clamps = n_velocity_clamps + 1;
         end
         

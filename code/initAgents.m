@@ -29,6 +29,7 @@ for i=1:data.floor_count
             data.floor(i).agents(cur_agent).f = [0, 0];
             data.floor(i).agents(cur_agent).m = data.m;
             data.floor(i).agents(cur_agent).v0 = data.v0;
+            data.floor(i).agents(cur_agent).v_max = generateV(data.v_max) ;
             
             tries = 10;
             while tries > 0

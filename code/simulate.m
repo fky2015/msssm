@@ -15,6 +15,8 @@ data.time = 0;
 frame = 0;
 fprintf('Start simulation...\n');
 
+param = [ "r." "g." "b." "m." "c."];
+
 while (data.time < data.duration)
     tstart=tic;
     data = addDesiredForce(data);
@@ -36,12 +38,15 @@ while (data.time < data.duration)
     set(0,'CurrentFigure',data.figure_exit);
     plotExitedAgents(data);
     
+    set(0,'CurrentFigure',data.figure_speed);
     
     % print mean/median velocity of agents on each floor
-%     for fi = 1:data.floor_count
-%         avgv = arrayfun(@(agent) norm(agent.v), data.floor(fi).agents);
-%         fprintf('Mean/median velocity on floor %i: %g/%g m/s\n', fi, mean(avgv), median(avgv));
-%     end
+     for fi = 1:data.floor_count
+       avgv = arrayfun(@(agent) norm(agent.v), data.floor(fi).agents);
+        fprintf('Mean/median velocity on floor %i: %g/%g m/s\n', fi, mean(avgv), median(avgv));
+        plotAverageV( data, mean(avgv), param(fi));
+        fprintf("\nfifififi {%i} \n", fi);
+    end
     
 
     if (data.time + data.dt > data.duration)
