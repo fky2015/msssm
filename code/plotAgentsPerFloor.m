@@ -16,5 +16,5 @@ hold on;
 plot(data.time, length(data.floor(floor_idx).agents), 'g.');
 hold off;
 
-title(sprintf('agents on floor %i', floor_idx));
+title(sprintf('agents on floor %i', floor_idx - 3));
 
