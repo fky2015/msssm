@@ -8,6 +8,7 @@ function data = addAgentRepulsiveForce(data)
 r_max = data.r_influence;
 tree = 0;
 
+
 for fi = 1:data.floor_count
     pos = [arrayfun(@(a) a.p(1), data.floor(fi).agents);
            arrayfun(@(a) a.p(2), data.floor(fi).agents)];

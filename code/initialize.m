@@ -34,12 +34,17 @@ data.figure_exit=figure;
 hold on;
 axis([0 data.duration 0 data.total_agent_count]);
 title(sprintf('agents that reached the exit (total agents: %i)', data.total_agent_count));
+xlabel("duration");
+ylabel("number of agents");
+
 
 %speed plot
 data.figure_speed = figure;
 hold on;
 axis([0 data.duration 0 1 ]);
 title(sprintf('agents average velocity'));
+xlabel("duration");
+ylabel("number of agents");
 
 %floors plot
 data.figure_floors=figure;
