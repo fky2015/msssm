@@ -7,6 +7,8 @@ n_velocity_clamps = 0;
 % loop over all floors
 for fi = 1:data.floor_count
 
+    fprintf("this is the floor %i\n", fi);
+    
     % init logical arrays to indicate agents that change the floor or exit
     % the simulation
     floorchange = false(length(data.floor(fi).agents),1);

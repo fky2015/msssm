@@ -45,7 +45,6 @@ while (data.time < data.duration)
        avgv = arrayfun(@(agent) norm(agent.v), data.floor(fi).agents);
         fprintf('Mean/median velocity on floor %i: %g/%g m/s\n', fi, mean(avgv), median(avgv));
         plotAverageV( data, mean(avgv), param(fi));
-        fprintf("\nfifififi {%i} \n", fi);
     end
     
 
