@@ -10,11 +10,11 @@ if floor_idx~=data.floor_count
     set(h,'ytick',[]) %hide y-axis label
 end
 
-axis([0 data.duration 0 data.total_agent_count]);
+axis([0 data.duration 0 data.total_agent_count/4]);
 
-hold on;
+hold on
 plot(data.time, length(data.floor(floor_idx).agents), 'g.');
 hold off;
 
-title(sprintf('agents on floor %i', floor_idx - 3));
+% title(sprintf('agents on floor %i', floor_idx - 3));
 
